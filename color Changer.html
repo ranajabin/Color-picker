@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <title>Color Changer</title>
+
+   <style>
+    h4{
+        font-size:80px;
+    }
+
+    h2{
+        border: 3px solid blue;
+        width: 50%;
+        margin-left: 250px;
+        color: aliceblue;
+        background-color: black;
+    }
+
+
+  </style>
+  </head>
+  <body style="text-align: center; margin:200px;">
+    <nav>
+      <div class="nav-center">
+        <h4>Background color Changer</h4>
+      
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <h2>background color : <span class="color">#f1f5f8</span></h2>
+        <button class="btn btn-primary" id="btn">click me</button>
+      </div>
+    </main>
+    <!-- javascript -->
+    <script>
+const colors = ["green", "red", "blue", "yellow"];
+const btn = document.getElementById("btn");
+const color = document.querySelector(".color");
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * colors.length);
+}
+
+btn.addEventListener("click", function () {
+  const randomNumber = getRandomNumber();
+  
+  document.body.style.backgroundColor = colors[randomNumber];
+//  color.textContent = colors[randomNumber];
+});
+    </script>
+  </body>
+</html>
